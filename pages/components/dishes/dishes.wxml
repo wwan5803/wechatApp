@@ -14,13 +14,11 @@
 					<text class="title">{{item.name}}</text>
 					<p>￥{{item.price}}</p>
 				</view>
-				<!--<view class="add-btn"><icon type="{{item.status ? 'success' : 'circle'}}" color="orange" size="30"></icon></view>-->
-				<view class="section section_gap">
-				<text class="section__title">已选</text>
-				<view class="body-view">
-					<slider bindchange="slider3change" color="#000000" show-value/>
+				<view class="flex-direction-row" catchtap="mDish" data-dish="{{item}}">-</view>
+				<view class="flex-direction-row">
+					<p>{{item.name}}</p>
 				</view>
-				</view>
+				<view class="flex-direction-row" catchtap="aDish" data-dish="{{item}}">+</view>
 			</view>
 		</block>
 

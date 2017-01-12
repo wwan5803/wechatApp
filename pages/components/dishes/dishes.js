@@ -94,6 +94,50 @@ Page({
             curIndex:index
         })
     },
+    aDish (event) {
+        let dish = event.currentTarget.dataset.dish;
+        let totalPrice = this.data.totalPrice;
+        this.data.cart.push(dish);
+        totalPrice = totalPrice + dish.price;
+       
+        this.setData({
+            cartTotal:this.data.cart.length,
+            totalPrice: totalPrice
+        })
+        this.setStatus(dish.id)
+    },
+     mDish (event) {
+        let dish = event.currentTarget.dataset.dish;
+        let totalPrice = this.data.totalPrice;
+        let index = 0;
+        let self = this;
+        let flag = false;
+        if(this.data.cart.length > 0){
+            this.data.cart.forEach(function(item,index){
+                console.log("item", item);
+                console.log("dish", dish);
+                if(item.id == dish.id){
+                   flag = true;
+                   index = self.data.cart.indexOf(item);
+                   return
+                }
+            })
+            if(flag){
+                this.data.cart.splice(index, 1);
+                totalPrice = totalPrice - dish.price;
+            
+                this.setData({
+                    cartTotal:this.data.cart.length,
+                    totalPrice: totalPrice
+                })
+                this.setStatus(dish.id)
+            }else{
+                //alert this item is not in the cart
+            }
+        
+        }
+    
+    },
     // 选择菜品
     selectDish (event) {
         let dish = event.currentTarget.dataset.dish;
