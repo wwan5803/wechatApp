@@ -6,6 +6,12 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
   },
+  onShow: function(){
+    console.log('onShow');
+  },
+  onHide: function(){
+    console.log('onHide');
+  },
   getUserInfo:function(cb){
     var that = this;
     if(this.globalData.userInfo){

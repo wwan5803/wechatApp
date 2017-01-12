@@ -1,21 +1,23 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.my-swiper image{
+  width: 100%;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.wrap{
+	display: inline-block;
+	margin-top: .8rem;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.wrap-item{
+	display: inline-block;
+	width: 33%;
+	height: 6rem;
+	line-height: 6rem;
+	border-bottom: 1px solid #ddd;
+	background-color: #fff;
+	text-align: center;
 }
-
-.usermotto {
-  margin-top: 200px;
+ /*不支持 :nth-child(2);*/
+.wrap-item.exp{
+	border: 1px solid #ddd;
+	border-top: 0;
 }
